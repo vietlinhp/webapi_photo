@@ -100,4 +100,5 @@ def check_photo_quality():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    port = int(os.environ.get('PORT', 8080))  # Dynamically get the port from the environment
+    app.run(host='0.0.0.0', port=port, debug=False)  # Use debug=False in production
