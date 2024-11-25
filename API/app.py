@@ -93,5 +93,4 @@ def validate_image(image_data):
         return False
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8080))  # Dynamically get the port from the environment
-    app.run(host='0.0.0.0', port=port, debug=False)  # Use debug=False in production
+    app.run(port=int(os.environ.get("PORT", 8080)), host='0.0.0.0', debug=True)
