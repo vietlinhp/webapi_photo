@@ -48,7 +48,8 @@
       ],
       "waitFor": ["web-api-deploy"],
       "id": "api-url-extraction"
-    },
+    }
+  ],
   "artifacts": {
     "objects": {
       "location": "gs://${_TEMP_REPO}/",
