@@ -29,7 +29,7 @@
         "--platform",
         "managed",
         "--port",
-        "5000",
+        "8080",
         "--cpu",
         "2",
         "--memory",
