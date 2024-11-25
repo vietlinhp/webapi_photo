@@ -49,16 +49,6 @@
       "waitFor": ["web-api-deploy"],
       "id": "api-url-extraction"
     },
-    {
-      "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
-      "entrypoint": "/bin/sh",
-      "args": [
-        "-c",
-        "gcloud run deploy prediction-ui --image ${_LOCATION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY}/prediction-ui --set-env-vars PREDICTOR_API=$(cat /workspace/api_url.text)/housing_predict/ --region us-central1 --platform managed --port 5000 --cpu 2 --memory 4G --allow-unauthenticated"
-      ],
-      "waitFor": ["api-url-extraction"]
-    }
-  ],
   "artifacts": {
     "objects": {
       "location": "gs://${_TEMP_REPO}/",
