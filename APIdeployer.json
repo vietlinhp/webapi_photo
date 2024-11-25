@@ -38,12 +38,6 @@
       ],
       "id": "web-api-deploy"
     },
-    {
-      "name": "ubuntu",
-      "args": ["sleep", "60"],
-      "waitFor": ["web-api-deploy"],
-      "id": "sleep-delay"
-    },
   "options": {
     "logging": "CLOUD_LOGGING_ONLY"
   }
