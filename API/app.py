@@ -50,7 +50,7 @@ def photo_quality(image_data, image_data_comp):
         return "Bad quality"
     if not isbright(image_data):
         return "The picture is too dark"
-    if similarity_check(image_data, image_data_comp) < 0.23:
+    if similarity_check(image_data, image_data_comp) < 0.24:
         return "The picture doesn't capture the object correctly"
     return "Great picture"
 
