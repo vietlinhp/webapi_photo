@@ -22,7 +22,7 @@ def quality_check(image):
     output = json.loads(r.text)
     return output["quality"]["score"]
 
-def isbright(image_data, dim=10, thresh=0.5):
+def isbright(image_data, dim=10, thresh=0.4):
     image_array = cv2.imdecode(np.frombuffer(image_data, np.uint8), cv2.IMREAD_COLOR)
     image_resized = cv2.resize(image_array, (dim, dim))
     L, A, B = cv2.split(cv2.cvtColor(image_resized, cv2.COLOR_BGR2LAB))
@@ -50,7 +50,7 @@ def photo_quality(image_data, image_data_comp):
         return "Bad quality"
     if not isbright(image_data):
         return "The picture is too dark"
-    if similarity_check(image_data, image_data_comp) < 0.25:
+    if similarity_check(image_data, image_data_comp) < 0.28:
         return "The picture doesn't capture the object correctly"
     return "Great picture"
 
