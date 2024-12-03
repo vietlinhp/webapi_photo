@@ -46,11 +46,11 @@ def similarity_check(image_data_1, image_data_2):
     return similarity_score
 
 def photo_quality(image_data, image_data_comp):
-    if quality_check(BytesIO(image_data)) < 0.55:
+    if quality_check(BytesIO(image_data)) < 0.10:
         return "Bad quality"
     if not isbright(image_data):
         return "The picture is too dark"
-    if similarity_check(image_data, image_data_comp) < 0.20:
+    if similarity_check(image_data, image_data_comp) < 0.05:
         return "The picture doesn't capture the object correctly"
     return "Great picture"
 
